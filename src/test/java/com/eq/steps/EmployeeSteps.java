@@ -29,14 +29,16 @@ public class EmployeeSteps {
 	   System.out.println(lists.get(0).get("first_name"));
 	   System.out.println(lists.get(0).get("middle_name"));
 	   System.out.println(lists.get(0).get("last_name"));
+	   
+	 
 	}
 	@When("I click on save employee")
 	public void i_click_on_save_employee() {
 	    
 	}
 	@Then("I should get the profile name as {string}")
-	public void i_should_get_the_profile_name_as(String expected_name) {
-	   System.out.println(expected_name);
+	public void i_should_get_the_profile_name_as(String expectedProfileName) {
+	   System.out.println(expectedProfileName);
 	}
 	@Then("I should get the personal details form filled with added data")
 	public void i_should_get_the_personal_details_form_filled_with_added_data() {
