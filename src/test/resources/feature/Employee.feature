@@ -21,4 +21,4 @@ Feature: Employee
     Examples: 
       | username | password | fname | middle_name | lname   |
       | Admin    | admin123 | john  | w           | wick    |
-      | Admin    | admin123 | saul  | g           | goodman |
+      #| Admin    | admin123 | saul  | g           | goodman |

@@ -3,6 +3,10 @@ package com.eq.steps;
 import java.util.List;
 import java.util.Map;
 
+import org.openqa.selenium.By;
+
+import com.eq.base.AutomationWrapper;
+
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,7 +15,7 @@ public class EmployeeSteps {
 
 	@When("I click on PIM menu")
 	public void i_click_on_pim_menu() {
-	   
+		AutomationWrapper.driver.findElement(By.xpath("//span[text()='PIM']")).click();
 	}
 	@When("I click on add employee")
 	public void i_click_on_add_employee() {
