@@ -1,5 +1,9 @@
 package com.eq.steps;
 
+import java.util.List;
+import java.util.Map;
+
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -14,8 +18,22 @@ public class EmployeeSteps {
 	 
 	}
 	@When("I fill the employee form")
-	public void i_fill_the_employee_form(io.cucumber.datatable.DataTable dataTable) {
+	public void i_fill_the_employee_form(DataTable dataTable) {
+	   System.out.println(dataTable);
 	    
+	   List<Map<String,String>> lists= dataTable.asMaps();
+	   
+	   System.out.println(lists);
+	   System.out.println(lists.get(0));
+	   
+	   System.out.println(lists.get(0).get("first_name"));
+	   System.out.println(lists.get(0).get("middle_name"));
+	   System.out.println(lists.get(0).get("last_name"));
+	   
+	   System.out.println(lists.get(1).get("first_name"));
+	   
+	   System.out.println(lists.size());
+	   System.out.println(lists.get(0).size());
 	}
 	@When("I click on save employee")
 	public void i_click_on_save_employee() {

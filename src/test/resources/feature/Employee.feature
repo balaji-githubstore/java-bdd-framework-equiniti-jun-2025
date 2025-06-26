@@ -13,8 +13,8 @@ Feature: Employee
     And I click on add employee
     And I fill the employee form
       | first_name | middle_name | last_name |
-      | jack       | m           | wick      |
+      | jack       |        4454 | wick      |
+      | jack2      |       44542 | wick2     |
     And I click on save employee
     Then I should get the profile name as "jack wick"
     And I should get the personal details form filled with added data
-   
