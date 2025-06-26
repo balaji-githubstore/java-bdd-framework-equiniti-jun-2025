@@ -29,8 +29,6 @@ public class EmployeeSteps {
 	   System.out.println(lists.get(0).get("first_name"));
 	   System.out.println(lists.get(0).get("middle_name"));
 	   System.out.println(lists.get(0).get("last_name"));
-	   
-	 
 	}
 	@When("I click on save employee")
 	public void i_click_on_save_employee() {
