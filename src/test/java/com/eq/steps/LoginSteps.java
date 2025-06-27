@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.eq.base.AutomationWrapper;
-import com.eq.base.DataTransfer;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,11 +14,9 @@ public class LoginSteps {
 	
 	private final WebDriver driver;
 	
-	public LoginSteps(AutomationWrapper wrapper,DataTransfer dt)
+	public LoginSteps(AutomationWrapper wrapper)
 	{
 		this.driver=wrapper.driver;
-		dt.a=1000;
-		dt.list.add("LoginSteps");
 	}
 	
 	@Given("I have browser with OrangeHRM application")
