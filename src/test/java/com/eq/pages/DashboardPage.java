@@ -8,10 +8,10 @@ import com.eq.base.WebDriverKeywords;
 
 public class DashboardPage extends WebDriverKeywords {
 
+	private By timeAtWorkLocator=By.xpath("//p[contains(normalize-space(),'at Work')]");
+	
 	private final WebDriver driver;
 	
-	private By timeAtWorkLocator=By.xpath("//p[contains(normalize-space(),'at Work')]");
-
 	public DashboardPage(AutomationWrapper wrapper) {
 		super(wrapper.driver);
 		this.driver = wrapper.driver;
