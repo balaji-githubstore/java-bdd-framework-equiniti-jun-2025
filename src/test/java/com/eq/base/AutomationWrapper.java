@@ -15,7 +15,10 @@ public class AutomationWrapper {
 	@Before
 	public void setupScenario()
 	{
-		//launch browser
+		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+		AutomationWrapper.driver = new ChromeDriver();
+		AutomationWrapper.driver.manage().window().maximize();
+		AutomationWrapper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	@After

@@ -3,7 +3,6 @@ package com.eq.steps;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
@@ -17,11 +16,6 @@ public class LoginSteps  {
 	
 	@Given("I have browser with OrangeHRM application")
 	public void i_have_browser_with_orange_hrm_application() {
-		
-		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-		AutomationWrapper.driver = new ChromeDriver();
-		AutomationWrapper.driver.manage().window().maximize();
-		AutomationWrapper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		AutomationWrapper.driver.get("https://opensource-demo.orangehrmlive.com/");
 	}
 

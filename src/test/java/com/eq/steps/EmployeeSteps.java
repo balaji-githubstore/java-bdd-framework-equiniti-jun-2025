@@ -34,6 +34,7 @@ public class EmployeeSteps {
 	   System.out.println(lists.get(0).get("middle_name"));
 	   System.out.println(lists.get(0).get("last_name"));
 	}
+	
 	@When("I click on save employee")
 	public void i_click_on_save_employee() {
 	    
@@ -45,5 +46,9 @@ public class EmployeeSteps {
 	@Then("I should get the personal details form filled with added data")
 	public void i_should_get_the_personal_details_form_filled_with_added_data() {
 	    
+		//get same datatable and verify it
 	}
 }
+
+
+
