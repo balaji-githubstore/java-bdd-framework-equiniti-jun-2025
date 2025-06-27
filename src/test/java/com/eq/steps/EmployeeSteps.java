@@ -4,18 +4,30 @@ import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 import com.eq.base.AutomationWrapper;
+import com.eq.base.DataTransfer;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class EmployeeSteps {
+	
+	private final WebDriver driver;
+	
+	public EmployeeSteps(AutomationWrapper wrapper,DataTransfer dt)
+	{
+		this.driver=wrapper.driver;
+		System.out.println(dt.a);
+		System.out.println(dt.b);
+		System.out.println(dt.list);
+	}
 
 	@When("I click on PIM menu")
 	public void i_click_on_pim_menu() {
-		AutomationWrapper.driver.findElement(By.xpath("//span[text()='PIM']")).click();
+		driver.findElement(By.xpath("//span[text()='PIM']")).click();
 	}
 	@When("I click on add employee")
 	public void i_click_on_add_employee() {

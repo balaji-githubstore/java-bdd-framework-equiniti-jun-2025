@@ -10,15 +10,15 @@ import io.cucumber.java.Before;
 
 public class AutomationWrapper {
 	
-	public static WebDriver driver;
+	public WebDriver driver;
 
 	@Before
 	public void setupScenario()
 	{
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-		AutomationWrapper.driver = new ChromeDriver();
-		AutomationWrapper.driver.manage().window().maximize();
-		AutomationWrapper.driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	
 	@After
