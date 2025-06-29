@@ -3,6 +3,7 @@ package com.eq.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.DriverManager;
 import java.time.Duration;
 import java.util.Properties;
 
@@ -49,10 +50,11 @@ public class AutomationWrapper {
 	public void teardownScenario()
 	{
 		//close browser
-		if(driver !=null)
-		{
-			driver.quit();
-			
-		}
+		try {
+            driver.quit();
+            LoggerUtils.info("Browser closed successfully");
+        } catch (Exception e) {
+            LoggerUtils.error("Failed to close browser: " + e.getMessage());
+        }
 	}
 }

@@ -26,23 +26,19 @@ public class LoginPage extends WebDriverKeywords {
 	}
 
 	public void enterUsername(String username) {
-//		driver.findElement(usernameLocator).sendKeys(username);
-		super.setInputTextToElement(usernameLocator, username);
+		super.enterText(usernameLocator, username);
 	}
 
 	public void enterPassword(String password) {
-//		driver.findElement(passwordLocator).sendKeys(password);
-		setInputTextToElement(passwordLocator, password);
+		enterText(passwordLocator, password);
 	}
 
 	public void clickOnLogin() {
-//		driver.findElement(loginLocator).click();
-		super.clickOnElement(loginLocator);
+		clickElement(loginLocator);
 	}
 
 	public String getInvalidErrorMessage() {
-//		return driver.findElement(errorLocator).getText();
-		return super.getElementText(errorLocator);
+		return getElementText(errorLocator);
 	}
 
 	public String getLoginPageTitle() {
@@ -50,11 +46,11 @@ public class LoginPage extends WebDriverKeywords {
 	}
 
 	public String getLoginHeader() {
-		return driver.findElement(headerLocator).getText();
+		return getElementText(headerLocator);
 	}
 
 	public String getUsernamePlaceholder() {
-		return driver.findElement(usernameLocator).getAttribute("placeholder");
+		return getElementAttribute(usernameLocator, "placeholder");
 	}
 
 }
