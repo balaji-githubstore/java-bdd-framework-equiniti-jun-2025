@@ -22,8 +22,6 @@ public class EmployeeSteps {
 	private final AddEmployeePage addEmpPage;
 	private final PersonalDetailsPage personalDetailPage;
 	private final DataTransfer dt;
-	
-	private static 	List<Map<String, String>> lists;
 
 	public EmployeeSteps(MainPage mainPage, PIMPage pimPage, AddEmployeePage addEmpPage, PersonalDetailsPage personalDetailPage,DataTransfer dt) {
 		this.mainPage = mainPage;
@@ -47,20 +45,17 @@ public class EmployeeSteps {
 	@When("I fill the employee form")
 	public void i_fill_the_employee_form(DataTable dataTable) {
 		System.out.println(dataTable);
-
 		
-		lists = dataTable.asMaps();
-
 		dt.listOfMapsDt=dataTable.asMaps();
-		System.out.println(lists);
-		System.out.println(lists.get(0));
+		System.out.println(dt.listOfMapsDt);
+		System.out.println(dt.listOfMapsDt.get(0));
 
-		System.out.println(lists.get(0).get("first_name"));
-		System.out.println(lists.get(0).get("middle_name"));
-		System.out.println(lists.get(0).get("last_name"));
+		System.out.println(dt.listOfMapsDt.get(0).get("first_name"));
+		System.out.println(dt.listOfMapsDt.get(0).get("middle_name"));
+		System.out.println(dt.listOfMapsDt.get(0).get("last_name"));
 
-		addEmpPage.fillEmployeeForm(lists.get(0).get("first_name"), lists.get(0).get("middle_name"),
-				lists.get(0).get("last_name"));
+		addEmpPage.fillEmployeeForm(dt.listOfMapsDt.get(0).get("first_name"), dt.listOfMapsDt.get(0).get("middle_name"),
+				dt.listOfMapsDt.get(0).get("last_name"));
 	}
 
 	@When("I click on save employee")
@@ -74,9 +69,8 @@ public class EmployeeSteps {
 		Assert.assertEquals(actualName, expectedProfileName);
 	}
 
-//	@Then("I should get the personal details form filled with added data")
-//	public void i_should_get_the_personal_details_form_filled_with_added_data() {
-//
-//		Assert.assertEquals(personalDetailPage.getFirtNameValue(), lists.get(0).get("first_name"));
-//	}
+	@Then("I should get the personal details form filled with added data")
+	public void i_should_get_the_personal_details_form_filled_with_added_data() {
+		Assert.assertEquals(personalDetailPage.getFirtNameValue(), dt.listOfMapsDt.get(0).get("first_name"));
+	}
 }
